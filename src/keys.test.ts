@@ -3,7 +3,7 @@
 
 import { test, expect } from 'vitest';
 
-import  { generatePrivateKey, getPublicKey } from '../dist/nostrain';
+import { generatePrivateKey, getPublicKey } from '../dist/nostrain';
 
 test('test private key generation', () => {
   expect(generatePrivateKey()).toMatch(/[a-f0-9]{64}/);

@@ -12,7 +12,7 @@ test('validate github claim', async () => {
   const result = await nip39.validateGithub(
     'npub1gcxzte5zlkncx26j68ez60fzkvtkm9e0vrwdcvsjakxf9mu9qewqlfnj5z', // cspell:disable-line
     'vitorpamplona', // cspell:disable-line
-    'cf19e2d1d7f8dac6348ad37b35ec8421'
+    'cf19e2d1d7f8dac6348ad37b35ec8421',
   );
   expect(result).toBe(true);
 });

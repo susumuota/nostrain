@@ -29,7 +29,7 @@ const event = {
   kind: 1,
   created_at: Math.round(Date.now() / 1000),
   content: 'hello from a delegated key',
-  tags: [['delegation', delegation.from, delegation.cond, delegation.sig]]
+  tags: [['delegation', delegation.from, delegation.cond, delegation.sig]],
 };
 
 console.log({ tags: event.tags });

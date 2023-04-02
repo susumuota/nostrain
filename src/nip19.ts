@@ -9,25 +9,25 @@ import { utf8Decoder, utf8Encoder } from './utils';
 const BECH32_MAX_SIZE = 5000;
 
 type ProfilePointer = {
-  pubkey: string, // hex
-  relays?: string[],
+  pubkey: string; // hex
+  relays?: string[];
 };
 
 type EventPointer = {
-  id: string, // hex
-  relays?: string[],
-  author?: string,
+  id: string; // hex
+  relays?: string[];
+  author?: string;
 };
 
 type AddressPointer = {
-  identifier: string,
-  pubkey: string,
-  kind: number,
-  relays?: string[],
+  identifier: string;
+  pubkey: string;
+  kind: number;
+  relays?: string[];
 };
 
 type TLV = {
-  [t: number]: Uint8Array[],
+  [t: number]: Uint8Array[];
 };
 
 // TODO: refactor
@@ -81,13 +81,16 @@ const naddrDecode = (data: Uint8Array) => {
   return { type: 'naddr', data: { identifier, pubkey, kind, relays } as AddressPointer };
 };
 
-const decode = (nip19: string): { type: string, data: ProfilePointer | EventPointer | AddressPointer | string } => {
+const decode = (nip19: string): { type: string; data: ProfilePointer | EventPointer | AddressPointer | string } => {
   const { prefix, words } = bech32.decode(nip19, BECH32_MAX_SIZE);
   const data = bech32.fromWords(words);
   switch (prefix) {
-    case 'nprofile': return nprofileDecode(data);
-    case 'nevent': return neventDecode(data);
-    case 'naddr': return naddrDecode(data);
+    case 'nprofile':
+      return nprofileDecode(data);
+    case 'nevent':
+      return neventDecode(data);
+    case 'naddr':
+      return naddrDecode(data);
     case 'nsec':
     case 'npub':
     case 'note':
@@ -140,9 +143,8 @@ const naddrEncode = (addr: AddressPointer) => {
   return bech32.encode('naddr', bech32.toWords(data), BECH32_MAX_SIZE);
 };
 
-const encodeBytes = (prefix: string, hex: string) => (
-  bech32.encode(prefix, bech32.toWords(hexToBytes(hex)), BECH32_MAX_SIZE)
-);
+const encodeBytes = (prefix: string, hex: string) =>
+  bech32.encode(prefix, bech32.toWords(hexToBytes(hex)), BECH32_MAX_SIZE);
 
 const nsecEncode = (hex: string) => encodeBytes('nsec', hex);
 

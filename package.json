@@ -36,6 +36,7 @@
     "build": "tsc && vite build",
     "watch": "concurrently \"tsc --watch\" \"vite build --watch\"",
     "test": "vitest",
+    "format": "prettier --check .",
     "pack": "rm -f *.tgz *.zip ; npm pack ; tar tfz *.tgz | sed -e 's|^package/||' | zip -r@ `ls *.tgz | sed -e 's|\\.tgz|\\.zip|'`"
   },
   "devDependencies": {
@@ -46,6 +47,7 @@
     "@vitest/ui": "^0.29.8",
     "concurrently": "^8.0.1",
     "node-fetch": "^3.3.1",
+    "prettier": "2.8.7",
     "tsx": "^3.12.6",
     "typescript": "^5.0.3",
     "vite": "^4.2.0",

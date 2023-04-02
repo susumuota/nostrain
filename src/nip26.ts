@@ -5,22 +5,22 @@ import { schnorr } from '@noble/curves/secp256k1';
 import { sha256 } from '@noble/hashes/sha256';
 import { bytesToHex } from '@noble/hashes/utils';
 
-import type { Event } from './event'
-import { utf8Encoder } from './utils'
-import { getPublicKey } from './keys'
+import type { Event } from './event';
+import { utf8Encoder } from './utils';
+import { getPublicKey } from './keys';
 
 type Parameters = {
-  pubkey: string,             // the key to whom the delegation will be given
-  kind?: number,
-  until?: number,  // delegation will only be valid until this date
-  since?: number,  // delegation will be valid from this date on
+  pubkey: string; // the key to whom the delegation will be given
+  kind?: number;
+  until?: number; // delegation will only be valid until this date
+  since?: number; // delegation will be valid from this date on
 };
 
 type Delegation = {
-  from: string,  // the pubkey who signed the delegation
-  to: string,    // the pubkey that is allowed to use the delegation
-  cond: string,  // the string of conditions as they should be included in the event tag
-  sig: string,
+  from: string; // the pubkey who signed the delegation
+  to: string; // the pubkey that is allowed to use the delegation
+  cond: string; // the string of conditions as they should be included in the event tag
+  sig: string;
 };
 
 const createDelegation = (privateKey: string, parameters: Parameters) => {

@@ -3,14 +3,7 @@
 
 // node examples/event.ts
 
-import {
-  validateEvent,
-  verifySignature,
-  signEvent,
-  getEventHash,
-  generatePrivateKey,
-  getPublicKey
-} from 'nostrain';
+import { validateEvent, verifySignature, signEvent, getEventHash, generatePrivateKey, getPublicKey } from 'nostrain';
 
 const privateKey = generatePrivateKey();
 

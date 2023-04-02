@@ -3,10 +3,10 @@
 
 import type { ProfilePointer } from './nip19';
 
-let _fetch: any
+let _fetch: any;
 
 try {
-  _fetch = fetch
+  _fetch = fetch;
 } catch {}
 
 const useFetchImplementation = (fetchImplementation: any) => {
