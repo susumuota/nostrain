@@ -24,7 +24,7 @@ type Delegation = {
 };
 
 const createDelegation = (privateKey: string, parameters: Parameters) => {
-  let conditions = [];
+  const conditions = [] as string[];
   if ((parameters.kind || -1) >= 0) conditions.push(`kind=${parameters.kind}`);
   if (parameters.until) conditions.push(`created_at<${parameters.until}`);
   if (parameters.since) conditions.push(`created_at>${parameters.since}`);
