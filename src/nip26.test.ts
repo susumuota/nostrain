@@ -22,7 +22,7 @@ test('parse good delegation from NIP', async () => {
       ],
       content: 'Hello world',
       sig: 'cd4a3cd20dc61dcbc98324de561a07fd23b3d9702115920c0814b5fb822cc5b7c5bcdaf3fa326d24ed50c5b9c8214d66c75bae34e3a84c25e4d122afccb66eb6',
-    })
+    }),
   ).toEqual('86f0689bd48dcd19c67a19d994f938ee34f251d8c39976290955ff585f2db42e');
 });
 
@@ -43,7 +43,7 @@ test('parse bad delegations', async () => {
       ],
       content: 'Hello world',
       sig: 'cd4a3cd20dc61dcbc98324de561a07fd23b3d9702115920c0814b5fb822cc5b7c5bcdaf3fa326d24ed50c5b9c8214d66c75bae34e3a84c25e4d122afccb66eb6',
-    })
+    }),
   ).toEqual(null);
 
   expect(
@@ -62,7 +62,7 @@ test('parse bad delegations', async () => {
       ],
       content: 'Hello world',
       sig: 'cd4a3cd20dc61dcbc98324de561a07fd23b3d9702115920c0814b5fb822cc5b7c5bcdaf3fa326d24ed50c5b9c8214d66c75bae34e3a84c25e4d122afccb66eb6',
-    })
+    }),
   ).toEqual(null);
 
   expect(
@@ -81,7 +81,7 @@ test('parse bad delegations', async () => {
       ],
       content: 'Hello world',
       sig: 'cd4a3cd20dc61dcbc98324de561a07fd23b3d9702115920c0814b5fb822cc5b7c5bcdaf3fa326d24ed50c5b9c8214d66c75bae34e3a84c25e4d122afccb66eb6',
-    })
+    }),
   ).toEqual(null);
 });
 

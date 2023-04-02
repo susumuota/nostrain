@@ -31,7 +31,7 @@ describe('Event', () => {
         kind: Kind.Text,
         tags: [],
         content: 'Hello, world!',
-        created_at: 1617932115
+        created_at: 1617932115,
       };
 
       const event = finishEvent(template, privateKey);
@@ -68,8 +68,8 @@ describe('Event', () => {
           unsignedEvent.created_at,
           unsignedEvent.kind,
           unsignedEvent.tags,
-          unsignedEvent.content
-        ])
+          unsignedEvent.content,
+        ]),
       );
     });
 
@@ -84,7 +84,8 @@ describe('Event', () => {
         pubkey: publicKey, // missing content
       };
 
-      expect(() => { // @ts-ignore
+      expect(() => {
+        // @ts-ignore
         serializeEvent(invalidEvent);
       }).toThrow("can't serialize event with wrong or missing properties");
     });
@@ -220,7 +221,7 @@ describe('Event', () => {
           content: 'Hello, world!',
           created_at: 1617932115,
         },
-        privateKey
+        privateKey,
       );
 
       const isValid = verifySignature(event);
@@ -238,7 +239,7 @@ describe('Event', () => {
           content: 'Hello, world!',
           created_at: 1617932115,
         },
-        privateKey
+        privateKey,
       );
 
       // tamper with the signature
@@ -262,7 +263,7 @@ describe('Event', () => {
           content: 'Hello, world!',
           created_at: 1617932115,
         },
-        privateKey1
+        privateKey1,
       );
 
       // verify with different private key

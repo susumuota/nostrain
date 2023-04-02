@@ -21,10 +21,7 @@ import { nip19, generatePrivateKey, getPublicKey } from 'nostrain';
 
 {
   const pk = getPublicKey(generatePrivateKey());
-  const relays = [
-    'wss://relay.nostr.example.mydomain.example.com',
-    'wss://nostr.banana.com',
-  ];
+  const relays = ['wss://relay.nostr.example.mydomain.example.com', 'wss://nostr.banana.com'];
   const nprofile = nip19.nprofileEncode({ pubkey: pk, relays });
   const { type, data } = nip19.decode(nprofile);
   console.log({ pk, relays, nprofile, type, data });

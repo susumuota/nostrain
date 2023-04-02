@@ -6,6 +6,6 @@
 import { generatePrivateKey, getPublicKey } from 'nostrain';
 
 const sk = generatePrivateKey(); // `sk` is a hex string
-const pk = getPublicKey(sk);     // `pk` is a hex string
+const pk = getPublicKey(sk); // `pk` is a hex string
 
 console.log({ sk, pk });

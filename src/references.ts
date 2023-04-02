@@ -6,10 +6,10 @@ import type { AddressPointer, ProfilePointer, EventPointer } from './nip19';
 import { decode } from './nip19';
 
 type Reference = {
-  text: string,
-  profile?: ProfilePointer,
-  event?: EventPointer,
-  address?: AddressPointer,
+  text: string;
+  profile?: ProfilePointer;
+  event?: EventPointer;
+  address?: AddressPointer;
 };
 
 const mentionRegex = /\bnostr:((note|npub|naddr|nevent|nprofile)1\w+)\b|#\[(\d+)\]/g;
@@ -23,7 +23,7 @@ const parseReferences = (evt: Event) => {
         const { type, data } = decode(ref[1]);
         switch (type) {
           case 'npub': {
-            references.push({ text: ref[0], profile: {pubkey: data as string, relays: []} });
+            references.push({ text: ref[0], profile: { pubkey: data as string, relays: [] } });
             break;
           }
           case 'nprofile': {
@@ -31,7 +31,7 @@ const parseReferences = (evt: Event) => {
             break;
           }
           case 'note': {
-            references.push({ text: ref[0], event: {id: data as string, relays: []} });
+            references.push({ text: ref[0], event: { id: data as string, relays: [] } });
             break;
           }
           case 'nevent': {
@@ -77,6 +77,6 @@ const parseReferences = (evt: Event) => {
   }
 
   return references;
-}
+};
 
 export { parseReferences };

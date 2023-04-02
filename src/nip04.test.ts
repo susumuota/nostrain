@@ -3,7 +3,7 @@
 
 import { test, expect } from 'vitest';
 
-globalThis.crypto = require('crypto');  // TODO: how to pass without this?
+globalThis.crypto = require('crypto'); // TODO: how to pass without this?
 
 import { nip04, getPublicKey, generatePrivateKey } from '../dist/nostrain';
 

@@ -4,14 +4,14 @@
 import type { Event } from './event';
 
 type Filter = {
-  ids?: string[],
-  kinds?: number[],
-  authors?: string[],
-  since?: number,
-  until?: number,
-  limit?: number,
-  search?: string,
-  [key: `#${string}`]: string[],  // e.g. '#e', '#p'
+  ids?: string[];
+  kinds?: number[];
+  authors?: string[];
+  since?: number;
+  until?: number;
+  limit?: number;
+  search?: string;
+  [key: `#${string}`]: string[]; // e.g. '#e', '#p'
 };
 
 const matchFilter = (filter: Filter, event: Event): boolean => {
@@ -33,9 +33,8 @@ const matchFilter = (filter: Filter, event: Event): boolean => {
   return true;
 };
 
-const matchFilters = (filters: Filter[], event: Event) => (
-  filters.find(filter => matchFilter(filter, event)) !== undefined
-);
+const matchFilters = (filters: Filter[], event: Event) =>
+  filters.find(filter => matchFilter(filter, event)) !== undefined;
 
 export type { Filter };
 export { matchFilter, matchFilters };

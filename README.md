@@ -20,7 +20,7 @@ npm install nostrain
 import { generatePrivateKey, getPublicKey } from 'nostrain';
 
 const sk = generatePrivateKey(); // `sk` is a hex string
-const pk = getPublicKey(sk);     // `pk` is a hex string
+const pk = getPublicKey(sk); // `pk` is a hex string
 
 console.log({ sk, pk });
 ```
@@ -28,14 +28,7 @@ console.log({ sk, pk });
 ### Creating, signing and verifying events
 
 ```javascript
-import {
-  validateEvent,
-  verifySignature,
-  signEvent,
-  getEventHash,
-  generatePrivateKey,
-  getPublicKey
-} from 'nostrain';
+import { validateEvent, verifySignature, signEvent, getEventHash, generatePrivateKey, getPublicKey } from 'nostrain';
 
 const privateKey = generatePrivateKey();
 
@@ -100,10 +93,7 @@ import { nip19, generatePrivateKey, getPublicKey } from 'nostrain';
 
 {
   const pk = getPublicKey(generatePrivateKey());
-  const relays = [
-    'wss://relay.nostr.example.mydomain.example.com',
-    'wss://nostr.banana.com',
-  ];
+  const relays = ['wss://relay.nostr.example.mydomain.example.com', 'wss://nostr.banana.com'];
   const nprofile = nip19.nprofileEncode({ pubkey: pk, relays });
   const { type, data } = nip19.decode(nprofile);
   console.log({ pk, relays, nprofile, type, data });
@@ -166,7 +156,7 @@ const event = {
   kind: 1,
   created_at: Math.round(Date.now() / 1000),
   content: 'hello from a delegated key',
-  tags: [['delegation', delegation.from, delegation.cond, delegation.sig]]
+  tags: [['delegation', delegation.from, delegation.cond, delegation.sig]],
 };
 
 console.log({ tags: event.tags });

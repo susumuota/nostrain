@@ -27,27 +27,27 @@ enum Kind {
   RelayList = 10002,
   ClientAuth = 22242,
   Article = 30023,
-};
+}
 
 type EventTemplate = {
-  kind: Kind,
-  tags: string[][],
-  content: string,
-  created_at: number,
+  kind: Kind;
+  tags: string[][];
+  content: string;
+  created_at: number;
 };
 
 type UnsignedEvent = EventTemplate & {
-  pubkey: string,
+  pubkey: string;
 };
 
 type Event = UnsignedEvent & {
-  id: string,
-  sig: string,
+  id: string;
+  sig: string;
 };
 
-const getBlankEvent = () => ( // @ts-ignore // kind 255 is OK
-  { kind: 255, content: '', tags: [], created_at: 0 } as EventTemplate
-);
+const getBlankEvent = () =>
+  // @ts-ignore // kind 255 is OK
+  ({ kind: 255, content: '', tags: [], created_at: 0 } as EventTemplate);
 
 const finishEvent = (event: EventTemplate, privateKey: string) => {
   const e = event as Event;
@@ -62,9 +62,7 @@ const serializeEvent = (event: UnsignedEvent) => {
   return JSON.stringify([0, event.pubkey, event.created_at, event.kind, event.tags, event.content]);
 };
 
-const getEventHash = (event: UnsignedEvent) => (
-  bytesToHex(sha256(utf8Encoder.encode(serializeEvent(event))))
-);
+const getEventHash = (event: UnsignedEvent) => bytesToHex(sha256(utf8Encoder.encode(serializeEvent(event))));
 
 const validateEvent = (event: UnsignedEvent) => {
   if (typeof event !== 'object') return false;
@@ -83,13 +81,10 @@ const validateEvent = (event: UnsignedEvent) => {
   return true;
 };
 
-const verifySignature = (event: Event) => (
-  schnorr.verify(event.sig, getEventHash(event), event.pubkey)
-);
+const verifySignature = (event: Event) => schnorr.verify(event.sig, getEventHash(event), event.pubkey);
 
-const signEvent = (event: UnsignedEvent, privateKey: string) => (
-  bytesToHex(schnorr.sign(getEventHash(event), privateKey))
-);
+const signEvent = (event: UnsignedEvent, privateKey: string) =>
+  bytesToHex(schnorr.sign(getEventHash(event), privateKey));
 
 export type { EventTemplate, UnsignedEvent, Event };
 export { Kind, getBlankEvent, finishEvent, serializeEvent, getEventHash, validateEvent, verifySignature, signEvent };
