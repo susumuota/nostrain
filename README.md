@@ -6,8 +6,6 @@
 
 ## Installation
 
-- Work in progress. See Development section for now.
-
 ```bash
 npm install nostrain
 ```
@@ -18,8 +16,8 @@ npm install nostrain
 
 ### Generating a private key and a public key
 
-```typescript
-import { generatePrivateKey, getPublicKey } from '../dist/nostrain';
+```javascript
+import { generatePrivateKey, getPublicKey } from 'nostrain';
 
 const sk = generatePrivateKey(); // `sk` is a hex string
 const pk = getPublicKey(sk);     // `pk` is a hex string
@@ -29,7 +27,7 @@ console.log({ sk, pk });
 
 ### Creating, signing and verifying events
 
-```typescript
+```javascript
 import {
   validateEvent,
   verifySignature,
@@ -37,8 +35,7 @@ import {
   getEventHash,
   generatePrivateKey,
   getPublicKey
-} from '../dist/nostrain';
-import type { Event } from '../dist/index';
+} from 'nostrain';
 
 const privateKey = generatePrivateKey();
 
@@ -50,7 +47,7 @@ const event = {
   pubkey: getPublicKey(privateKey),
   id: '',
   sig: '',
-} as Event;
+};
 
 event.id = getEventHash(event);
 event.sig = signEvent(event, privateKey);
@@ -74,8 +71,8 @@ See [src/references.test.ts](https://github.com/susumuota/nostrain/blob/main/src
 
 ### Querying profile data from a NIP-05 address
 
-```typescript
-import { nip05 } from '../dist/nostrain';
+```javascript
+import { nip05 } from 'nostrain';
 
 const profile = await nip05.queryProfile('jb55.com');
 
@@ -84,15 +81,13 @@ console.log({ profile });
 
 ### Encoding and decoding NIP-19 codes
 
-```typescript
-import { nip19, generatePrivateKey, getPublicKey } from '../dist/nostrain';
-import type { ProfilePointer } from '../dist/nip19';
+```javascript
+import { nip19, generatePrivateKey, getPublicKey } from 'nostrain';
 
 {
   const sk = generatePrivateKey();
   const nsec = nip19.nsecEncode(sk);
   const { type, data } = nip19.decode(nsec);
-
   console.log({ sk, nsec, type, data });
 }
 
@@ -109,7 +104,7 @@ import type { ProfilePointer } from '../dist/nip19';
     'wss://relay.nostr.example.mydomain.example.com',
     'wss://nostr.banana.com',
   ];
-  const nprofile = nip19.nprofileEncode({ pubkey: pk, relays } as ProfilePointer);
+  const nprofile = nip19.nprofileEncode({ pubkey: pk, relays });
   const { type, data } = nip19.decode(nprofile);
   console.log({ pk, relays, nprofile, type, data });
 }
@@ -117,13 +112,12 @@ import type { ProfilePointer } from '../dist/nip19';
 
 ### Encrypting and decrypting direct messages
 
-```typescript
+```javascript
 import crypto from 'node:crypto';
 
-// @ts-ignore
 globalThis.crypto = crypto;
 
-import { nip04, getPublicKey, generatePrivateKey } from '../dist/nostrain';
+import { nip04, getPublicKey, generatePrivateKey } from 'nostrain';
 
 // sender
 const sk1 = generatePrivateKey();
@@ -145,8 +139,8 @@ console.log({ message, ciphertext, plaintext });
 
 ### Performing and checking for delegation
 
-```typescript
-import { nip26, getPublicKey, generatePrivateKey } from '../dist/nostrain';
+```javascript
+import { nip26, getPublicKey, generatePrivateKey } from 'nostrain';
 
 // delegator
 const sk1 = generatePrivateKey();
