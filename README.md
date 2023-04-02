@@ -1,7 +1,7 @@
 # nostrain: Nostr client library with no strain
 
 - A Nostr client library with modern TypeScript style.
-- Most of the functions are compatible with [nostr-tools](https://github.com/nbd-wtf/nostr-tools).
+- Most of the functions are refactored from [nostr-tools](https://github.com/nbd-wtf/nostr-tools) and are compatible with it.
 - Only depends on [@noble](https://github.com/paulmillr/noble-curves) and [@scure](https://github.com/paulmillr/scure-base) packages.
 
 ## Installation
