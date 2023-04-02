@@ -35,7 +35,8 @@
   "scripts": {
     "build": "tsc && vite build",
     "watch": "concurrently \"tsc --watch\" \"vite build --watch\"",
-    "test": "vitest"
+    "test": "vitest",
+    "pack": "rm -f *.tgz *.zip ; npm pack ; tar tfz *.tgz | sed -e 's|^package/||' | zip -r@ `ls *.tgz | sed -e 's|\\.tgz|\\.zip|'`"
   },
   "devDependencies": {
     "@tsconfig/esm": "^1.0.2",
