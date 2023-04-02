@@ -1,9 +1,10 @@
 // SPDX-FileCopyrightText: 2023 Susumu OTA <1632335+susumuota@users.noreply.github.com>
 // SPDX-License-Identifier: MIT
 
+// node examples/encrypt.js
+
 import crypto from 'node:crypto';
 
-// @ts-ignore
 globalThis.crypto = crypto;
 
 import { nip04, getPublicKey, generatePrivateKey } from 'nostrain';

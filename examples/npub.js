@@ -1,13 +1,14 @@
 // SPDX-FileCopyrightText: 2023 Susumu OTA <1632335+susumuota@users.noreply.github.com>
 // SPDX-License-Identifier: MIT
 
+// node examples/npub.js
+
 import { nip19, generatePrivateKey, getPublicKey } from 'nostrain';
 
 {
   const sk = generatePrivateKey();
   const nsec = nip19.nsecEncode(sk);
   const { type, data } = nip19.decode(nsec);
-
   console.log({ sk, nsec, type, data });
 }
 
