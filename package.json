@@ -1,0 +1,60 @@
+{
+  "name": "nostrain",
+  "version": "0.9.0",
+  "description": "Nostr client library with no strain.",
+  "author": "Susumu OTA",
+  "license": "MIT",
+  "keywords": [
+    "nostr",
+    "protocol",
+    "relay",
+    "crypt",
+    "publickey"
+  ],
+  "homepage": "https://github.com/susumuota/nostrain#readme",
+  "bugs": {
+    "url": "https://github.com/susumuota/nostrain/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/susumuota/nostrain.git"
+  },
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "module": "./dist/nostrain.js",
+  "main": "./dist/nostrain.umd.cjs",
+  "exports": {
+    ".": {
+      "import": "./dist/nostrain.js",
+      "require": "./dist/nostrain.umd.cjs"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && vite build",
+    "watch": "concurrently \"tsc --watch\" \"vite build --watch\"",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@tsconfig/esm": "^1.0.2",
+    "@tsconfig/node-lts": "^18.12.1",
+    "@tsconfig/strictest": "^2.0.0",
+    "@types/node": "^18.15.11",
+    "@vitest/ui": "^0.29.8",
+    "concurrently": "^8.0.1",
+    "node-fetch": "^3.3.1",
+    "tsx": "^3.12.6",
+    "typescript": "^5.0.3",
+    "vite": "^4.2.0",
+    "vitest": "^0.29.8"
+  },
+  "dependencies": {
+    "@noble/curves": "^0.9.1",
+    "@noble/hashes": "^1.3.0",
+    "@scure/base": "^1.1.1",
+    "@scure/bip32": "^1.2.0",
+    "@scure/bip39": "^1.2.0"
+  }
+}
