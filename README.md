@@ -1,18 +1,20 @@
 # nostrain: Nostr client library with no strain
 
-A nostr client library with modern style and refactoring.
-
-Most of the functions are compatible with nostr-tools.
-
-Only depends on @noble and @scure packages.
+- A Nostr client library with modern TypeScript style.
+- Most of the functions are compatible with [nostr-tools](https://github.com/nbd-wtf/nostr-tools).
+- Only depends on [@noble](https://github.com/paulmillr/noble-curves) and [@scure](https://github.com/paulmillr/scure-base) packages.
 
 ## Installation
+
+- Work in progress. See Development section for now.
 
 ```bash
 npm install nostrain
 ```
 
 ## Usage
+
+- See [examples](https://github.com/susumuota/nostrain/tree/main/examples).
 
 ### Generating a private key and a public key
 
@@ -68,7 +70,7 @@ TODO: work in progress
 
 ### Parsing references (mentions) from a content using NIP-10 and NIP-27
 
-See [https://github.com/susumuota/src/references.test.js](src/references.test.js).
+See [src/references.test.ts](https://github.com/susumuota/nostrain/blob/main/src/references.test.ts).
 
 ### Querying profile data from a NIP-05 address
 
