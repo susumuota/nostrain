@@ -213,6 +213,6 @@ MIT License, see [LICENSE](LICENSE) file.
 
 S. Ota
 
-- nostr: [`npub1susumuq8u7v0sp2f5jl3wjuh8hpc3cqe2tc2j5h4gu7ze7z20asq2w0yu8`](https://iris.to/s_ota)
+- nostr: [npub1susumuq8u7v0sp2f5jl3wjuh8hpc3cqe2tc2j5h4gu7ze7z20asq2w0yu8](https://iris.to/s_ota)
 - GitHub: [susumuota](https://github.com/susumuota)
 - Twitter: [@susumuota](https://twitter.com/susumuota)
