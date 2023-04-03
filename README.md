@@ -1,5 +1,16 @@
 # nostrain: Nostr client library with no strain
 
+[![npm](https://img.shields.io/npm/v/nostrain?color=blue)](https://www.npmjs.com/package/nostrain)
+[![npm bundle size](https://img.shields.io/bundlephobia/min/nostrain)](https://github.com/susumuota/nostrain)
+[![GitHub](https://img.shields.io/github/license/susumuota/nostrain)](https://github.com/susumuota/nostrain/blob/main/LICENSE)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/susumuota/nostrain/build.yaml)](https://github.com/susumuota/nostrain/actions/workflows/build.yaml)
+[![GitHub last commit](https://img.shields.io/github/last-commit/susumuota/nostrain)](https://github.com/susumuota/nostrain/commits)
+&emsp;
+EN |
+[JA](https://github-com.translate.goog/susumuota/nostrain/blob/main/README.md?_x_tr_sl=en&_x_tr_tl=ja&_x_tr_hl=ja&_x_tr_pto=wapp) |
+[ES](https://github-com.translate.goog/susumuota/nostrain/blob/main/README.md?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=wapp) |
+[ZH](https://github-com.translate.goog/susumuota/nostrain/blob/main/README.md?_x_tr_sl=en&_x_tr_tl=zh-CN&_x_tr_hl=zh-CN&_x_tr_pto=wapp)
+
 - A Nostr client library with modern TypeScript style.
 - Most of the functions are refactored from [nostr-tools](https://github.com/nbd-wtf/nostr-tools) and are compatible with it.
 - Only depends on [@noble](https://github.com/paulmillr/noble-curves) and [@scure](https://github.com/paulmillr/scure-base) packages.
