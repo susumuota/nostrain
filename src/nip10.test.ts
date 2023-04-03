@@ -7,7 +7,7 @@ import { nip10 } from '../dist/nostrain';
 
 describe('parse NIP10-referenced events', () => {
   test('legacy + a lot of events', () => {
-    let event = {
+    const event = {
       tags: [
         ['e', 'b857504288c18a15950dd05b9e8772c62ca6289d5aac373c0a8ee5b132e94e7c'],
         ['e', 'bbd72f0ae14374aa8fb166b483cfcf99b57d7f4cf1600ccbf17c350040834631'],
@@ -71,7 +71,7 @@ describe('parse NIP10-referenced events', () => {
   });
 
   test('legacy + 3 events', () => {
-    let event = {
+    const event = {
       tags: [
         ['e', 'b857504288c18a15950dd05b9e8772c62ca6289d5aac373c0a8ee5b132e94e7c'],
         ['e', 'bbd72f0ae14374aa8fb166b483cfcf99b57d7f4cf1600ccbf17c350040834631'],
@@ -115,7 +115,7 @@ describe('parse NIP10-referenced events', () => {
   });
 
   test('legacy + 2 events', () => {
-    let event = {
+    const event = {
       tags: [
         ['e', 'b857504288c18a15950dd05b9e8772c62ca6289d5aac373c0a8ee5b132e94e7c'],
         ['e', 'bbd72f0ae14374aa8fb166b483cfcf99b57d7f4cf1600ccbf17c350040834631'],
@@ -153,7 +153,7 @@ describe('parse NIP10-referenced events', () => {
   });
 
   test('legacy + 1 event', () => {
-    let event = {
+    const event = {
       tags: [
         ['e', '9abbfd9b9ac5ecdab45d14b8bf8d746139ea039e931a1b376d19a239f1946590'],
         ['p', '534780e44da7b494485e85cd4cca6af4f6caa1627472432b6f2a4ece0e9e54ec'],
@@ -181,7 +181,7 @@ describe('parse NIP10-referenced events', () => {
   test.todo('recommended + 2 events');
 
   test('recommended + 1 event', () => {
-    let event = {
+    const event = {
       tags: [
         ['p', 'a8c21fcd8aa1f4befba14d72fc7a012397732d30d8b3131af912642f3c726f52', 'wss://relay.mostr.pub'],
         ['p', '003d7fd21fd09ff7f6f63a75daf194dd99feefbe6919cc376b7359d5090aa9a6', 'wss://relay.mostr.pub'],
