@@ -186,6 +186,7 @@ cd nostrain
 npm ci
 npm run build  # or npm run watch
 npm run test
+npm run format
 ```
 
 ## Source code
