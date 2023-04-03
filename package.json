@@ -1,6 +1,6 @@
 {
   "name": "nostrain",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Nostr client library with no strain.",
   "author": "Susumu OTA",
   "license": "MIT",
@@ -44,11 +44,9 @@
     "@tsconfig/node-lts": "^18.12.1",
     "@tsconfig/strictest": "^2.0.0",
     "@types/node": "^18.15.11",
-    "@vitest/ui": "^0.29.8",
     "concurrently": "^8.0.1",
     "node-fetch": "^3.3.1",
     "prettier": "2.8.7",
-    "tsx": "^3.12.6",
     "typescript": "^5.0.3",
     "vite": "^4.2.0",
     "vitest": "^0.29.8"
