@@ -39,14 +39,7 @@ console.log({ sk, pk });
 ### Creating, signing and verifying events
 
 ```javascript
-import {
-  validateEvent,
-  verifySignature,
-  signEvent,
-  getEventHash,
-  generatePrivateKey,
-  getPublicKey,
-} from 'nostrain';
+import { validateEvent, verifySignature, signEvent, getEventHash, generatePrivateKey, getPublicKey } from 'nostrain';
 
 const privateKey = generatePrivateKey();
 
@@ -145,7 +138,7 @@ relay.close();
 To use this on Node.js you first must install `websocket-polyfill` and import it:
 
 ```javascript
-import 'websocket-polyfill'
+import 'websocket-polyfill';
 ```
 
 ### Interacting with multiple relays
