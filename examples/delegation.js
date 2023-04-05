@@ -37,4 +37,5 @@ console.log({ tags: event.tags });
 // finally any receiver of this event can check for the presence of a valid delegation tag
 const delegator = nip26.getDelegator(event);
 
-console.log({ delegator, pk1, success: delegator === pk1 }); // will be null if there is no delegation tag or if it is invalid
+// will be null if there is no delegation tag or if it is invalid
+console.log({ delegator, pk1, success: delegator === pk1 });

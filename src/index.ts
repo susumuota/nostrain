@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 export * from './keys';
-// export * from './relay'; // TODO: work in progress, Sub, Pub
+export * from './relay';
 export * from './event';
 export * from './filter';
 // export * from './pool'; // TODO
