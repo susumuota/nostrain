@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2023 Susumu OTA <1632335+susumuota@users.noreply.github.com>
 // SPDX-License-Identifier: MIT
 
+import { webcrypto } from 'one-webcrypto';
+
 import type { Event } from './event';
 import type { Filter } from './filter';
 
@@ -202,7 +204,7 @@ class Sub {
   // send 'REQ' and handle 'EVENT' or 'EOSE' until unsub is called
   sub(filters: Filter[]) {
     if (!this.#relay.connected()) throw new Error('not connected');
-    this.#id = crypto.randomUUID();
+    this.#id = webcrypto.randomUUID();
     this.#filters = filters;
     this.#messageListener = ((ev: globalThis.MessageEvent) => {
       try {

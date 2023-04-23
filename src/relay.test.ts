@@ -3,8 +3,6 @@
 
 import { test, expect, beforeAll, afterAll } from 'vitest';
 
-globalThis.crypto = require('crypto'); // TODO: how to pass without this?
-
 import 'websocket-polyfill';
 import { relayInit, generatePrivateKey, getPublicKey, getEventHash, signEvent } from '../dist/nostrain';
 
