@@ -1,7 +1,6 @@
 # nostrain: Nostr client library with no strain
 
 [![npm](https://img.shields.io/npm/v/nostrain?color=blue)](https://www.npmjs.com/package/nostrain)
-[![npm bundle size](https://img.shields.io/bundlephobia/min/nostrain)](https://github.com/susumuota/nostrain)
 [![GitHub](https://img.shields.io/github/license/susumuota/nostrain)](https://github.com/susumuota/nostrain/blob/main/LICENSE)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/susumuota/nostrain/build.yaml)](https://github.com/susumuota/nostrain/actions/workflows/build.yaml)
 [![GitHub last commit](https://img.shields.io/github/last-commit/susumuota/nostrain)](https://github.com/susumuota/nostrain/commits)

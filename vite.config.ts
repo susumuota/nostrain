@@ -20,6 +20,7 @@ export default defineConfig({
         '@scure/bip32',
         '@scure/bip39',
         '@scure/bip39/wordlists/english.js',
+        'one-webcrypto',
       ],
       output: {
         globals: {
@@ -30,6 +31,7 @@ export default defineConfig({
           '@scure/bip32': 'ScureBip32',
           '@scure/bip39': 'ScureBip39',
           '@scure/bip39/wordlists/english.js': 'ScureBip39English',
+          'one-webcrypto': 'OneWebcrypto',
         },
       },
     },

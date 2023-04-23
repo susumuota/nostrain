@@ -13,8 +13,11 @@ export * as nip05 from './nip05';
 export * as nip06 from './nip06';
 export * as nip10 from './nip10';
 export * as nip19 from './nip19';
+// export * as nip21 from './nip21'; // TODO
 export * as nip26 from './nip26';
+// export * as nip27 from './nip27'; // TODO
 export * as nip39 from './nip39';
+// export * as nip42 from './nip42'; // TODO
 // export * as nip57 from './nip57'; // TODO
 
 export * as fj from './fakejson';
